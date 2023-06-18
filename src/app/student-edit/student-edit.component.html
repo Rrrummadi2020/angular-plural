@@ -1,25 +1,25 @@
 <div class="container">
-  <div class="container" *ngIf="student&& student.address">
+  <div class="container" *ngIf="student&& student.address&& studentForm">
     selected student {{student.id}}
-    <form #studentForm="ngForm" (ngSubmit)="onSave(studentForm)">
+    <form [formGroup]="studentForm" (ngSubmit)="onSave()">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" name="name" class="form-control" [(ngModel)]="student.name">
+        <input type="text" formControlName="name" class="form-control" >
       </div>
       <div class="form-group">
         <label for="age">Age</label>
-        <input type="number" class="form-control" name="age" [(ngModel)]="student.age">
+        <input type="number" class="form-control" formControlName="age" >
       </div>
-      <div ngModelGroup="address">
+      <!-- <div ngModelGroup="address">
         <div class="form-group">
           <label for="street">Street</label>
-          <input type="text" [(ngModel)]="student.address.street" name="street" class="form-control">
+          <input type="text" [(ngModel)]="student.address.street" formControlName="street" class="form-control">
         </div>
         <div class="form-group">
           <label for="street">Pin Code</label>
-          <input type="text" [(ngModel)]="student.address.pin" name="pin" class="form-control">
+          <input type="text" [(ngModel)]="student.address.pin" formControlName="pin" class="form-control">
         </div>
-      </div>
+      </div> -->
       <button type="submit" (mouseenter)="onEnter()" (mouseleave)="onLeave()">Submit</button>
     </form>
   </div>

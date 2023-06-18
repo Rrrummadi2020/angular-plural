@@ -9,7 +9,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentEditComponent } from './student-edit/student-edit.component';
 import { CommonModule } from '@angular/common';
 import { studentGuard } from './student.guard';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PracticeComponent } from './practice/practice.component';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { PracticeComponent } from './practice/practice.component';
     PracticeComponent
   ],
   imports: [
-    BrowserModule, CommonModule,FormsModule,RouterModule.forRoot(
+    BrowserModule, CommonModule,FormsModule,ReactiveFormsModule, RouterModule.forRoot(
       [
         { path: '', redirectTo:'/students', pathMatch:'full' },
         { path: 'students', component: StudentListComponent },
