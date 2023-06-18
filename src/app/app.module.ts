@@ -6,15 +6,17 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentEditComponent } from './student-edit/student-edit.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    StudentEditComponent
+    StudentEditComponent,
+    StudentListComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(
+    BrowserModule, CommonModule,RouterModule.forRoot(
       [
         { path: '', redirectTo:'/students', pathMatch:'full' },
         { path: 'students', component: StudentListComponent },

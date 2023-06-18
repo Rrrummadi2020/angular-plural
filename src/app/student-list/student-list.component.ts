@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataService } from '../data.service';
+import { IStudents } from '../models/students';
 
 @Component({
   selector: 'app-student-list',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class StudentListComponent {
 
+  students: IStudents[] = [];
+  constructor(private dataService: DataService) { }
+
+  ngOnInit(): void {
+    this.dataService.getStudents().subscribe((res) => { this.students = res });
+  }
 }
