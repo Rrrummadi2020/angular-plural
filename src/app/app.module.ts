@@ -22,7 +22,8 @@ import { studentGuard } from './student.guard';
       [
         { path: '', redirectTo:'/students', pathMatch:'full' },
         { path: 'students', component: StudentListComponent },
-        { path: 'students/:id', component: StudentEditComponent, canActivate:[studentGuard],resolve:{data:studentResolver} }
+        { path: 'students/:id', component: StudentEditComponent, canActivate:[studentGuard],resolve:{data:studentResolver} },
+        { path: '**', pathMatch:'full', redirectTo:'/students'}
       ])
   ],
   providers: [],
