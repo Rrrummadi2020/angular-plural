@@ -1,6 +1,27 @@
 <div class="container">
-  selected student {{id}}
-  <h3>{{student?.name}}</h3>
-  <h3>{{student?.age}}</h3>
-  <button class="btn btn-primary" [routerLink]="['/students']">Back</button>
+  <div class="container" *ngIf="student&& student.address">
+    selected student {{student.id}}
+    <form #studentForm="ngForm" (ngSubmit)="onSave(studentForm)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control" [(ngModel)]="student.name">
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" name="age" [(ngModel)]="student.age">
+      </div>
+      <div ngModelGroup="address">
+        <div class="form-group">
+          <label for="street">Street</label>
+          <input type="text" [(ngModel)]="student.address.street" name="street" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="street">Pin Code</label>
+          <input type="text" [(ngModel)]="student.address.pin" name="pin" class="form-control">
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <button class="btn btn-secondary" [routerLink]="['/students']">Back</button>
 </div>

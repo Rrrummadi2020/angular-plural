@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { DataService } from '../data.service';
 import { IStudents } from '../models/students';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-student-edit',
@@ -17,5 +18,8 @@ export class StudentEditComponent {
     // this.id = Number(this.route.snapshot.paramMap.get('id'));
     // this.dataService.getStudent(this.id).subscribe(res=>this.student = res);
      this.student = this.route.snapshot.data['data'] ;
+  }
+  onSave(studentForm:NgForm){
+    console.log(studentForm);
   }
 }

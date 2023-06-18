@@ -9,6 +9,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentEditComponent } from './student-edit/student-edit.component';
 import { CommonModule } from '@angular/common';
 import { studentGuard } from './student.guard';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { studentGuard } from './student.guard';
     StudentListComponent
   ],
   imports: [
-    BrowserModule, CommonModule,RouterModule.forRoot(
+    BrowserModule, CommonModule,FormsModule,RouterModule.forRoot(
       [
         { path: '', redirectTo:'/students', pathMatch:'full' },
         { path: 'students', component: StudentListComponent },

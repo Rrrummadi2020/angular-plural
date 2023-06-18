@@ -8,10 +8,10 @@ import { IStudents } from './models/students';
 export class DataService {
 
   STUDENTS: IStudents[] = [
-    { id: 1, name: 'Rama', age: 23, address: 'kgPalle', dateOfBirth: '23/11/1998' },
-    { id: 2, name: 'Chandra', age: 37, address: 'Brahpalle', dateOfBirth: '03/07/2001' },
-    { id: 3, name: 'Mali', age: 23, address: 'Yuguduru', dateOfBirth: '13/04/1898' },
-    { id: 4, name: 'Neela', age: 23, address: 'Bugga', dateOfBirth: '28/07/1978' }
+    { id: 1, name: 'Rama', age: 23, address: {street:'kgpalle',pin:'515455'}, dateOfBirth: '23/11/1998' },
+    { id: 2, name: 'Chandra', age: 37, address: {street:'Brahpalle',pin:'515455'}, dateOfBirth: '03/07/2001' },
+    { id: 3, name: 'Mali', age: 23, address: {street:'Yuguduru',pin:'515455'}, dateOfBirth: '13/04/1898' },
+    { id: 4, name: 'Neela', age: 23, address: {street:'Bugga',pin:'515455'}, dateOfBirth: '28/07/1978' }
   ]
   constructor() { }
   getStudents(): Observable<IStudents[]> {
