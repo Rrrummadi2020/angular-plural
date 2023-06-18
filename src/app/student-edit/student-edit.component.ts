@@ -14,7 +14,8 @@ export class StudentEditComponent {
   constructor(private route:ActivatedRoute,
     private dataService:DataService){}
   ngOnInit(){
-    this.id = Number(this.route.snapshot.paramMap.get('id'));
-    this.dataService.getStudent(this.id).subscribe(res=>this.student = res);
+    // this.id = Number(this.route.snapshot.paramMap.get('id'));
+    // this.dataService.getStudent(this.id).subscribe(res=>this.student = res);
+     this.student = this.route.snapshot.data['data'] ;
   }
 }
