@@ -18,7 +18,7 @@ export class DataService {
     return of(this.STUDENTS);
   }
    getStudent(id:number):Observable<IStudents>{
-    if(this.STUDENTS.length>=id){
+    if(0<id&&id<=this.STUDENTS.length){
       return of(this.STUDENTS[id-1]);
     }
     return of(this.STUDENTS[0]);

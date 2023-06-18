@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentEditComponent } from './student-edit/student-edit.component';
 import { CommonModule } from '@angular/common';
+import { studentGuard } from './student.guard';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { CommonModule } from '@angular/common';
       [
         { path: '', redirectTo:'/students', pathMatch:'full' },
         { path: 'students', component: StudentListComponent },
-        { path: 'students/:id', component: StudentEditComponent }
+        { path: 'students/:id', component: StudentEditComponent, canActivate:[studentGuard] }
       ])
   ],
   providers: [],
