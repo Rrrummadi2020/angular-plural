@@ -22,4 +22,10 @@ export class StudentEditComponent {
   onSave(studentForm:NgForm){
     console.log(studentForm);
   }
+  onEnter(){
+    console.log('mouse entered');
+  }
+  onLeave(){
+    console.log('mouse Leaved');
+  }
 }

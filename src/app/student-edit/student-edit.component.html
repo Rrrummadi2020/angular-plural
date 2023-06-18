@@ -20,7 +20,7 @@
           <input type="text" [(ngModel)]="student.address.pin" name="pin" class="form-control">
         </div>
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" (mouseenter)="onEnter()" (mouseleave)="onLeave()">Submit</button>
     </form>
   </div>
   <button class="btn btn-secondary" [routerLink]="['/students']">Back</button>
