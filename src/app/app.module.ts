@@ -10,13 +10,15 @@ import { StudentEditComponent } from './student-edit/student-edit.component';
 import { CommonModule } from '@angular/common';
 import { studentGuard } from './student.guard';
 import { FormsModule } from '@angular/forms';
+import { PracticeComponent } from './practice/practice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     StudentEditComponent,
-    StudentListComponent
+    StudentListComponent,
+    PracticeComponent
   ],
   imports: [
     BrowserModule, CommonModule,FormsModule,RouterModule.forRoot(
@@ -24,6 +26,7 @@ import { FormsModule } from '@angular/forms';
         { path: '', redirectTo:'/students', pathMatch:'full' },
         { path: 'students', component: StudentListComponent },
         { path: 'students/:id', component: StudentEditComponent, canActivate:[studentGuard],resolve:{data:studentResolver} },
+        { path: 'practice', component: PracticeComponent },
         { path: '**', pathMatch:'full', redirectTo:'/students'}
       ])
   ],
