@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { studentGuard } from './student.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PracticeComponent } from './practice/practice.component';
+import { UnlessDirective } from './practice/directive/unless.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PracticeComponent } from './practice/practice.component';
     NavbarComponent,
     StudentEditComponent,
     StudentListComponent,
-    PracticeComponent
+    PracticeComponent,
+    UnlessDirective
   ],
   imports: [
     BrowserModule, CommonModule,FormsModule,ReactiveFormsModule, RouterModule.forRoot(

@@ -61,4 +61,7 @@ export class StudentEditComponent {
   onLeave(){
     console.log('mouse Leaved');
   }
+  customValidator(control:FormControl){
+    return control.value.includes('foo')?{'restrictedWords':'foo'}:null;
+  }
 }
