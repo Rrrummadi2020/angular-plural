@@ -12,6 +12,7 @@ import { studentGuard } from './student.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PracticeComponent } from './practice/practice.component';
 import { UnlessDirective } from './practice/directive/unless.directive';
+import { BetterHighlightDirective } from './practice/directive/better-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UnlessDirective } from './practice/directive/unless.directive';
     StudentEditComponent,
     StudentListComponent,
     PracticeComponent,
-    UnlessDirective
+    UnlessDirective,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule, CommonModule,FormsModule,ReactiveFormsModule, RouterModule.forRoot(
