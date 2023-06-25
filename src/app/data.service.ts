@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 import { IStudents } from './models/students';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class DataService {
     { id: 3, name: 'Mali', age: 23, address: {street:'Yuguduru',pin:'515455'}, dateOfBirth: '13/04/1898' },
     { id: 4, name: 'Neela', age: 23, address: {street:'Bugga',pin:'515455'}, dateOfBirth: '28/07/1978' }
   ]
-  constructor() { }
+  constructor(private http:HttpClient) { }
   getStudents(): Observable<IStudents[]> {
     return of(this.STUDENTS);
   }
@@ -22,6 +23,9 @@ export class DataService {
       return of(this.STUDENTS[id-1]);
     }
     return of(this.STUDENTS[0]);
+  }
+  getEvents(){
+    return this.http.get('api/events');
   }
 
 }

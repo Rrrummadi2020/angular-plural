@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PracticeComponent } from './practice/practice.component';
 import { UnlessDirective } from './practice/directive/unless.directive';
 import { BetterHighlightDirective } from './practice/directive/better-highlight.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { BetterHighlightDirective } from './practice/directive/better-highlight.
         { path: 'students/:id', component: StudentEditComponent, canActivate:[studentGuard],resolve:{data:studentResolver} },
         { path: 'practice', component: PracticeComponent },
         { path: '**', pathMatch:'full', redirectTo:'/students'}
-      ])
+      ]),HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
